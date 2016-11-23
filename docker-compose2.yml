@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  web:
+    build: ./nginx
+    ports:
+     - "80:80"
+    depends_on:
+      - nodeapp
+  nodeapp:
+    build:
+      context: ./node
+      dockerfile: Dockerfile2
+    ports:
+     - "3000:3000"
+    depends_on:
+      - redis
+  redis:
+    image: redis
+    volumes:
+      - ~/redis-demo:/data
