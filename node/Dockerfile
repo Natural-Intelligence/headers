@@ -6,4 +6,3 @@ WORKDIR /usr/src/app
 RUN npm install express
 USER nobody
 CMD [ "node" , "app.js" ]
-
