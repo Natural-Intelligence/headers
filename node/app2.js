@@ -1,6 +1,9 @@
 var express = require('express')
 var app = express()
+
 app.disable('x-powered-by');
+app.set('etag', false);
+
 var redis = require('redis')
 var client = redis.createClient('6379', 'redis');
 
